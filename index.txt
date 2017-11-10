@@ -1,0 +1,31 @@
+```const express = require('express');
+const app = new express();
+
+app.get('/', (req, res) => {
+  res.status(200).sendFile(__dirname + '/public/index.html');
+});
+
+let port = 8080;
+app
+.listen(port, () => {
+  console.log(
+    'time --> ' + new Date(),
+    `Your app is listening on port ${port}`
+  );
+});
+```
+
+
+[7:04] 
+ ```// install node from nodejs.org
+// install webpack: npm install -g webpack
+// add webpack extention to vs code
+// create project folder
+// in project folder, do npm init
+// in vs code, do Webpack Create
+// in project folder, do npm install
+// in project folder, create app folder and then index.js in the app folder
+// when ready to build files, just type "webpack" in the project root folder
+
+
+// to use live-server to run projects, install it globally, "npm install -g live-server"```
