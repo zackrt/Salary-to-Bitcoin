@@ -1,0 +1,12 @@
+Landing page:
+user sees: Welcome to “BitTube” or other name!
+“Discover the buying power of your Bitcoin!”
+user sees particle.js background
+user sees input box asking them to put in the amount of bitcoin they current have with place holder of 1.o and can see the current value next to box of current value of 1.0 BTC in USD.
+user can move cursor to input box, and input number of bitcoin they hold. user can see a submit button.
+ Once a submit button is pressed, app will calculate total value of their BTC into USD (possible message or alert announcing this USD value)
+user can see prompt that has converted their BTC into USD, and they can close or press ok to clear prompt/alert (possible dropdown input or radio button selector of multiple search categories: stereos, goPros)
+User then can see which products (4K TVs or Laptops or Video Game systems, some category pre-selected etc.) they can afford using their btc usd value as a MAX for a price range at Best Buy, min of range is perhaps 10%-50% less than MAx. 
+the results are rendered on the page for the user. (possible feature to have active outgoing link to that products best buy site.) 
+user can close window, or press a close button to exit app.
+user can restart the app. 
