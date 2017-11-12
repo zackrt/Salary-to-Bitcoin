@@ -1,0 +1,1 @@
+endpoint URL:  https://api.coindesk.com/v1/bpi/currentprice/<CODE>.json
