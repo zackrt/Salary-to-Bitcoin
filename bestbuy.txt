@@ -1,0 +1,9 @@
+"https://api.bestbuy.com/v1/products/8880044.json?apiKey=YourAPIKey"
+Returns the product document for SKU 8880044
+{
+  "sku": 8880044,
+  "productId": 1484301,
+  "name": "Batman Begins (Blu-ray Disc)"
+
+  ...
+}
