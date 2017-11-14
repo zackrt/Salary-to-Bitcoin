@@ -1,10 +1,17 @@
 import $ from 'jquery';
-import { getCurrentRate, getUserBitcoin } from "./coindesk-service";
+import { getCurrentRate, getUserBitcoin, convertAmountBTC } from "./coindesk-service";
 
 $('form').submit((e) => {
     e.preventDefault();
-    getCurrentRate();
-    getUserBitcoin();
+    
+    let y = getUserBitcoin();
+    getCurrentRate().then((rate)=> {
+        console.log("test");
+        var Amount = convertAmountBTC(y, rate);
+        console.log(Amount);
+
+    });
+    convertAmountBTC();
 })
 
 console.log('hello');

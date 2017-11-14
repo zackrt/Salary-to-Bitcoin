@@ -5,24 +5,23 @@ const Coindesk_URL = "https://api.coindesk.com/v1/bpi/currentprice.json";
 
 export const getCurrentRate = () => {
   //Promise .get with parameter Coindesk URL with jQuery .then that accepts params (data)
-  $.get(Coindesk_URL).then((data) => {
+  return $.getJSON(Coindesk_URL).then((data) => {
         console.log(data);
+        return data.bpi.USD.rate;
   });
 };
 export function getUserBitcoin() {
   //jQuery pull value from user amount value, in input box
   var UserBitcoin = $("#user-bitcoin-amount").val();
   console.log(UserBitcoin);
+  return UserBitcoin;
 }
 // creates a function that multiplies users input of BTC * current rate from CoinDesk
-export function convertAmountBTC(UserBitcoin, getCurrentRate){
-  var UserDollars = x;
+export function convertAmountBTC(UserBitcoin, rate){
+  var UserDollars = 0;
   //add IF the number is less than 21,000,000
-  if (UserBitcoin = number) {
-    UserBitcoin * rate.getCurrentRate = x;
+  //if (Number(UserBitcoin)) {
+    UserDollars = UserBitcoin * rate;
     return UserDollars;
-  }
-  if (UserBitcoin != number) {
-    return error;
-  }
+ // }
 }
