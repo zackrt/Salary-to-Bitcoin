@@ -7,7 +7,8 @@ export const getCurrentRate = () => {
   //Promise .get with parameter Coindesk URL with jQuery .then that accepts params (data)
   return $.getJSON(Coindesk_URL).then((data) => {
         console.log(data);
-        return data.bpi.USD.rate;
+        return data.bpi.USD.rate_float
+        ;
   });
 };
 export function getUserBitcoin() {
