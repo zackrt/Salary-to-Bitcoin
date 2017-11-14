@@ -17,6 +17,7 @@ export function getUserBitcoin() {
 // creates a function that multiplies users input of BTC * current rate from CoinDesk
 export function convertAmountBTC(UserBitcoin, getCurrentRate){
   var UserDollars = x;
+  //add IF the number is less than 21,000,000
   if (UserBitcoin = number) {
     UserBitcoin * rate.getCurrentRate = x;
     return UserDollars;
