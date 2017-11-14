@@ -2,3 +2,4 @@ endpoint URL:  https://api.coindesk.com/v1/bpi/currentprice/<CODE>.json
 
 pull
 "rate":"5,885.2813" to get current BTC rate. then multiply current rate * user’s amount of BTC to get USD purchasing power
+"rate":"6,721.6363"
