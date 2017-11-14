@@ -1,5 +1,6 @@
 import $ from 'jquery';
 import { getCurrentRate, getUserBitcoin, convertAmountBTC } from "./coindesk-service";
+import { renderResults } from './RenderResults';
 
 $('form').submit((e) => {
     e.preventDefault();

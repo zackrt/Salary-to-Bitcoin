@@ -24,5 +24,6 @@ export function convertAmountBTC(UserBitcoin, rate){
   //if (Number(UserBitcoin)) {
     UserDollars = UserBitcoin * rate;
     return UserDollars;
+    renderResults();
  // }
 }
