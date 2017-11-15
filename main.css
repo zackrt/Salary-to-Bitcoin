@@ -61,3 +61,21 @@ canvas {
 h1{
   background-color: gold;
 }
+h2{
+  color:white;
+  background-color:black; 
+}
+form {
+  color:white;
+  font-size:18px;
+}
+div {
+  font-size:22px;
+  color:lightgrey;
+}
+body {
+  margin-left: 400px;
+  margin-top: 130px;
+  display: inline-block;
+  border-style: outset;
+}
