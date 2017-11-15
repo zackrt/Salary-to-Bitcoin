@@ -10,9 +10,9 @@ $('form').submit((e) => {
         console.log("test");
         var Amount = convertAmountBTC(y, rate);
         console.log(Amount);
-
+        renderResults(Amount);
     });
-    convertAmountBTC();
+    //convertAmountBTC(); redundant
 })
 
 console.log('hello');

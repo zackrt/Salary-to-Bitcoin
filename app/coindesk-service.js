@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import {renderResults} from "./RenderResults";
 
 
 const Coindesk_URL = "https://api.coindesk.com/v1/bpi/currentprice.json";
@@ -23,7 +24,8 @@ export function convertAmountBTC(UserBitcoin, rate){
   //add IF the number is less than 21,000,000
   //if (Number(UserBitcoin)) {
     UserDollars = UserBitcoin * rate;
+    console.log('Testing');
+    
     return UserDollars;
-    renderResults();
  // }
 }

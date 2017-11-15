@@ -1,10 +1,8 @@
+import $ from 'jquery';
 import { getUserBitcoin,UserDollars } from "./coindesk-service";
-import { Amount } from "./index";
 
 //not getting called yet!!
-export function renderResults(UserDollars) {
-    var UserDollars;
-    $.get(getUserBitcoin);
+export function renderResults(Amount) {
     console.log("renderResults");
     console.log(Amount);
     $("#conversion-results").html(`${Amount.toString()}`);
