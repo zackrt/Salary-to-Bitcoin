@@ -1,1 +1,1 @@
-const Shop_URL = 
+const Shop_URL = "http://api.walmartlabs.com/v1/search?query=ipod&format=json&apiKey="
