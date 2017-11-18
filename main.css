@@ -50,18 +50,18 @@ canvas {
   -webkit-user-select: none;
 }
 
-#stats{
+#stats {
   border-radius: 3px 3px 0 0;
   overflow: hidden;
 }
 
-.count-particles{
+.count-particles {
   border-radius: 0 0 3px 3px;
 }
-h1{
+h1 {
   background-color: gold;
 }
-h2{
+h2 {
   color:white;
   background-color:black; 
 }
