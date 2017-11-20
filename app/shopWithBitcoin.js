@@ -6,4 +6,8 @@ devID : 3a7ae6c4-125f-461a-8569-1385701b43fd
 //Cert ID (Client Secret)
 certID:	SBX-5d74fc8f5a7a-af33-4879-b07d-0a4a
 
-//or use temp paid email account to get bestbuy API key
+//or use temp acct from friend w .com, or paid email account to get bestbuy API key
+
+//zillow api endpoint
+const Zillow_URL = "http://www.zillow.com/webservice";
+//BUNDLE.JS not loading through github
