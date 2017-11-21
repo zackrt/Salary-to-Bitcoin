@@ -70,83 +70,6 @@
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.renderResults = renderResults;
-
-var _jquery = __webpack_require__(2);
-
-var _jquery2 = _interopRequireDefault(_jquery);
-
-var _coindeskService = __webpack_require__(1);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-//not getting called yet!!
-function renderResults(Amount) {
-    console.log("renderResults");
-    console.log(Amount);
-    (0, _jquery2.default)("#conversion-results").html("" + Amount.toString());
-}
-// how to render results in
-
-/***/ }),
-/* 1 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.getCurrentRate = undefined;
-exports.getUserBitcoin = getUserBitcoin;
-exports.convertAmountBTC = convertAmountBTC;
-
-var _jquery = __webpack_require__(2);
-
-var _jquery2 = _interopRequireDefault(_jquery);
-
-var _RenderResults = __webpack_require__(0);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var Coindesk_URL = "https://api.coindesk.com/v1/bpi/currentprice.json";
-
-var getCurrentRate = exports.getCurrentRate = function getCurrentRate() {
-  //Promise .get with parameter Coindesk URL with jQuery .then that accepts params (data)
-  return _jquery2.default.getJSON(Coindesk_URL).then(function (data) {
-    console.log(data);
-    return data.bpi.USD.rate_float;
-  });
-};
-function getUserBitcoin() {
-  //jQuery pull value from user amount value, in input box
-  var UserBitcoin = (0, _jquery2.default)("#user-bitcoin-amount").val();
-  console.log(UserBitcoin);
-  return UserBitcoin;
-}
-// creates a function that multiplies users input of BTC * current rate from CoinDesk
-function convertAmountBTC(UserBitcoin, rate) {
-  var UserDollars = 0;
-  //add IF the number is less than 21,000,000
-  //if (Number(UserBitcoin)) {
-  UserDollars = UserBitcoin * rate;
-  console.log('Testing');
-
-  return UserDollars;
-  // }
-}
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports, __webpack_require__) {
-
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
  * jQuery JavaScript Library v3.2.1
  * https://jquery.com/
@@ -10404,19 +10327,97 @@ return jQuery;
 
 
 /***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.renderResults = renderResults;
+
+var _jquery = __webpack_require__(0);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+var _coindeskService = __webpack_require__(2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+//not getting called yet!!
+function renderResults(Amount) {
+    console.log("renderResults");
+    console.log(Amount);
+    (0, _jquery2.default)("#conversion-results").html("" + Amount.toString());
+}
+// how to render results in 
+// how to send Amount to Next page to display top 4 items they can buy with that much USD
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.getCurrentRate = undefined;
+exports.getUserBitcoin = getUserBitcoin;
+exports.convertAmountBTC = convertAmountBTC;
+
+var _jquery = __webpack_require__(0);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+var _RenderResults = __webpack_require__(1);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Coindesk_URL = "https://api.coindesk.com/v1/bpi/currentprice.json";
+
+var getCurrentRate = exports.getCurrentRate = function getCurrentRate() {
+  //Promise .get with parameter Coindesk URL with jQuery .then that accepts params (data)
+  return _jquery2.default.getJSON(Coindesk_URL).then(function (data) {
+    console.log(data);
+    return data.bpi.USD.rate_float;
+  });
+};
+function getUserBitcoin() {
+  //jQuery pull value from user amount value, in input box
+  var UserBitcoin = (0, _jquery2.default)("#user-bitcoin-amount").val();
+  console.log(UserBitcoin);
+  return UserBitcoin;
+}
+// creates a function that multiplies users input of BTC * current rate from CoinDesk
+function convertAmountBTC(UserBitcoin, rate) {
+  var UserDollars = 0;
+  //add IF the number is less than 21,000,000
+  //if (Number(UserBitcoin)) {
+  UserDollars = UserBitcoin * rate;
+  console.log('Testing');
+
+  return UserDollars;
+  // }
+}
+
+/***/ }),
 /* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _jquery = __webpack_require__(2);
+var _jquery = __webpack_require__(0);
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
-var _coindeskService = __webpack_require__(1);
+var _coindeskService = __webpack_require__(2);
 
-var _RenderResults = __webpack_require__(0);
+var _RenderResults = __webpack_require__(1);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 

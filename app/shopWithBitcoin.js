@@ -10,4 +10,6 @@ certID:	SBX-5d74fc8f5a7a-af33-4879-b07d-0a4a
 
 //zillow api endpoint
 const Zillow_URL = "http://www.zillow.com/webservice";
+Your Zillow Web Services Identification (ZWSID) is: X1-ZWz1g4gj9x622z_1pt0f
 //BUNDLE.JS not loading through github
+//capstone uses HTML5, CSS3, JavaScript, jQuery, Ajax, GitHub
