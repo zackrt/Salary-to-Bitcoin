@@ -70,6 +70,7 @@ h2 {
   text-align: center;
 }
 form {
+  font-style:italic;
   color:white;
   font-size:20px;
   display:flex;
@@ -79,6 +80,7 @@ form {
   align-items: center;
 }
 div {
+  font-weight: bold;
   font-size:26px;
   color:white;
   text-align: center;
@@ -94,4 +96,23 @@ body {
 }
 .show-product {
   border: 1px red outset;
+  font-style: normal;
+}
+button {
+  width: 100px; 
+  height:50px;
+}
+button:hover {
+  color:dodgerblue;
+}
+
+input {
+  margin-top: 20px;
+  padding-bottom: 10px;
+  padding-top:10px;
+}
+@media screen (max-width:240px) {
+  body {
+    width:100%;
+  }
 }
