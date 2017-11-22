@@ -65,9 +65,11 @@ h1 {
 }
 h2 {
   color:white;
-  background-color:black; 
+  background-color:black;
+  width:80%; 
   border: inset;
   text-align: center;
+  margin:auto;
 }
 form {
   font-style:italic;
@@ -93,8 +95,10 @@ body {
   flex-direction: column;
   justify-content: center;
   border-style: outset;
+  padding-bottom: 50px;
+  margin-bottom: 50px;
 }
-.show-product {
+.show-jobs {
   border: 1px red outset;
   font-style: normal;
 }
