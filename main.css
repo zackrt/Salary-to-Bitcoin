@@ -112,8 +112,10 @@ button:hover {
 
 input {
   margin-top: 20px;
+  margin-bottom: 20px;
   padding-bottom: 10px;
   padding-top:10px;
+  width:200px;
 }
 @media screen (max-width:240px) {
   body {
