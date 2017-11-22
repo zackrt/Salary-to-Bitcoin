@@ -13,3 +13,17 @@ const Zillow_URL = "http://www.zillow.com/webservice";
 Your Zillow Web Services Identification (ZWSID) is: X1-ZWz1g4gj9x622z_1pt0f
 //BUNDLE.JS not loading through github
 //capstone uses HTML5, CSS3, JavaScript, jQuery, Ajax, GitHub
+
+function watchShopSubmit(){
+    $("#shop").
+}
+
+function renderProducts(Amount){
+        return `
+        <div>
+            <h2>With this amount of Bitcoin, You can acquire:
+            </h2>
+            <img src="${}"></>
+        </div>
+    `
+}
