@@ -2,7 +2,7 @@ const url =
 "https://api.usa.gov/jobs/search.json";
 
 $(document).ready(() => {
-$('.show-jobs').submit((event) => {
+$('#jobs').click((event) => {
   event.preventDefault();
   const query = $('#job-query').val();
   $.getJSON(url, {
