@@ -2,7 +2,7 @@ const url =
 "https://api.usa.gov/jobs/search.json";
 
 $(document).ready(() => {
-$('#jobs').click(() => {
+$('.show-jobs').submit((event) => {
   event.preventDefault();
   const query = $('#job-query').val();
   $.getJSON(url, {
@@ -12,7 +12,7 @@ $('#jobs').click(() => {
     console.log("Hello");
     var govSalary = data;
     for (const job of data) {
-      $('salary-results').html(`${job.position_title} ${job.maximum}`);
+      $('#salary-results').html(`${job.position_title} ${job.maximum}`);
     }
    // RenderJobs(data);
   });

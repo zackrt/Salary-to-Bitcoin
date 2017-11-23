@@ -2,7 +2,7 @@ import $ from 'jquery';
 import { getCurrentRate, getUserBitcoin, convertAmountBTC } from "./coindesk-service";
 import { renderResults } from './RenderResults';
 
-$('form').submit((e) => {
+$('.bitcoin-convert').submit((e) => {
     e.preventDefault();
     
     let y = getUserBitcoin();

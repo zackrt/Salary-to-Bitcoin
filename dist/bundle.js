@@ -10421,7 +10421,7 @@ var _RenderResults = __webpack_require__(1);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-(0, _jquery2.default)('form').submit(function (e) {
+(0, _jquery2.default)('.bitcoin-convert').submit(function (e) {
     e.preventDefault();
 
     var y = (0, _coindeskService.getUserBitcoin)();
