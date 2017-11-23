@@ -97,9 +97,10 @@ body {
   border-style: outset;
   padding-bottom: 50px;
   margin-bottom: 50px;
+  background: fixed;
 }
 .show-jobs {
-  border: 1px red outset;
+  border: outset;
   font-style: normal;
 }
 button {

@@ -20,7 +20,7 @@ $('#jobs').click(() => {
 function RenderJobs(){
         return `
         <div>
-            <h2>With this Salary, you can acquire this much Bitcoin:
+            <h2>With this Salary, you can acquire this many Bitcoin:
             </h2>
            
         </div>
