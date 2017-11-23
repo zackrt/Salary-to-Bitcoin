@@ -3,16 +3,18 @@ const url =
 
 $(document).ready(() => {
 $('#jobs').click(() => {
-  const query = $('input').val();
+  event.preventDefault();
+  const query = $('#job-query').val();
   $.getJSON(url, {
     query
   }).then(data => {
     console.log(data);
+    console.log("Hello");
     var govSalary = data;
     for (const job of data) {
       $('salary-results').html(`${job.position_title} ${job.maximum}`);
     }
-    RenderJobs(data);
+   // RenderJobs(data);
   });
 })
 });

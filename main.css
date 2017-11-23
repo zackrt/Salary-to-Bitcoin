@@ -100,7 +100,7 @@ body {
   background: fixed;
 }
 .show-jobs {
-  border: outset;
+  border-top: outset;
   font-style: normal;
 }
 button {
