@@ -12,7 +12,7 @@ $('#jobs').click((event) => {
     console.log("Hello");
     var govSalary = data;
     for (const job of data) {
-      $('#salary-results').html(`${job.position_title} ${job.maximum}`);
+      $('.salary-results').html(`${job.position_title} ${job.maximum}`);
     }
    // RenderJobs(data);
   });
