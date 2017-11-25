@@ -6,7 +6,6 @@ console.log($('#jobs-form'));
 
 export const jobFormHandler = ()=> {
 $('#jobs-form').submit((event) => {
-  console.log("thanksgiving");
   event.preventDefault();
   const query = $('#job-query').val();
   let rate = $("#conversion-results").text();
@@ -21,9 +20,8 @@ $('#jobs-form').submit((event) => {
     $('.salary-results').html("");
     for (const job of data) {
       console.log('rate', rate, job.maximum);
-      $('.salary-results').append(`${job.position_title} ${SalarydividedbyBitcoin(rate,job.maximum)}`);
+      $('.salary-results').append(`<div class="Position-Title">${job.position_title}</div> <div class="salary-over-bitcoin">${SalarydividedbyBitcoin(rate,job.maximum)}</div>`);
     }
-   // RenderJobs(data);
   });
 })
 };

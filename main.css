@@ -118,6 +118,9 @@ input {
   padding-top:10px;
   width:200px;
 }
+.Position-Salary {
+
+}
 @media screen (max-width:240px) {
   body {
     width:100%;

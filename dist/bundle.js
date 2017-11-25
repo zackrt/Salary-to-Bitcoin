@@ -10467,7 +10467,6 @@ console.log((0, _jquery2.default)('#jobs-form'));
 
 var jobFormHandler = exports.jobFormHandler = function jobFormHandler() {
   (0, _jquery2.default)('#jobs-form').submit(function (event) {
-    console.log("thanksgiving");
     event.preventDefault();
     var query = (0, _jquery2.default)('#job-query').val();
     var rate = (0, _jquery2.default)("#conversion-results").text();
@@ -10489,9 +10488,8 @@ var jobFormHandler = exports.jobFormHandler = function jobFormHandler() {
           var job = _step.value;
 
           console.log('rate', rate, job.maximum);
-          (0, _jquery2.default)('.salary-results').append(job.position_title + ' ' + SalarydividedbyBitcoin(rate, job.maximum));
+          (0, _jquery2.default)('.salary-results').append('<div class="Position-Title">' + job.position_title + '</div> <div class="salary-over-bitcoin">' + SalarydividedbyBitcoin(rate, job.maximum) + '</div>');
         }
-        // RenderJobs(data);
       } catch (err) {
         _didIteratorError = true;
         _iteratorError = err;
