@@ -10419,6 +10419,8 @@ var _coindeskService = __webpack_require__(2);
 
 var _RenderResults = __webpack_require__(1);
 
+var _SalaryinBitcoin = __webpack_require__(4);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (0, _jquery2.default)('.bitcoin-convert').submit(function (e) {
@@ -10427,6 +10429,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
     var y = (0, _coindeskService.getUserBitcoin)();
     (0, _coindeskService.getCurrentRate)().then(function (rate) {
         console.log("test");
+
         var Amount = (0, _coindeskService.convertAmountBTC)(y, rate);
         console.log(Amount);
         (0, _RenderResults.renderResults)(Amount);
@@ -10435,6 +10438,80 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 });
 
 console.log('hello');
+
+(0, _jquery2.default)(function () {
+
+    (0, _SalaryinBitcoin.jobFormHandler)();
+});
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.jobFormHandler = undefined;
+
+var _jquery = __webpack_require__(0);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var url = "https://api.usa.gov/jobs/search.json";
+console.log((0, _jquery2.default)('#jobs-form'));
+
+var jobFormHandler = exports.jobFormHandler = function jobFormHandler() {
+  (0, _jquery2.default)('#jobs-form').submit(function (event) {
+    console.log("thanksgiving");
+    event.preventDefault();
+    var query = (0, _jquery2.default)('#job-query').val();
+    var rate = (0, _jquery2.default)("#conversion-results").text();
+    console.log('original rate', rate);
+    rate = Number(rate);
+    _jquery2.default.getJSON(url, {
+      query: query
+    }).then(function (data) {
+      console.log(data);
+      console.log("Hello");
+      //var govSalary = data;
+      (0, _jquery2.default)('.salary-results').html("");
+      var _iteratorNormalCompletion = true;
+      var _didIteratorError = false;
+      var _iteratorError = undefined;
+
+      try {
+        for (var _iterator = data[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+          var job = _step.value;
+
+          console.log('rate', rate, job.maximum);
+          (0, _jquery2.default)('.salary-results').append(job.position_title + ' ' + SalarydividedbyBitcoin(rate, job.maximum));
+        }
+        // RenderJobs(data);
+      } catch (err) {
+        _didIteratorError = true;
+        _iteratorError = err;
+      } finally {
+        try {
+          if (!_iteratorNormalCompletion && _iterator.return) {
+            _iterator.return();
+          }
+        } finally {
+          if (_didIteratorError) {
+            throw _iteratorError;
+          }
+        }
+      }
+    });
+  });
+};
+function SalarydividedbyBitcoin(rate, maximum) {
+  return maximum / rate;
+}
 
 /***/ })
 /******/ ]);

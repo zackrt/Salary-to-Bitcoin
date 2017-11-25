@@ -1,6 +1,7 @@
 import $ from 'jquery';
 import { getCurrentRate, getUserBitcoin, convertAmountBTC } from "./coindesk-service";
 import { renderResults } from './RenderResults';
+import { jobFormHandler } from './SalaryinBitcoin';
 
 $('.bitcoin-convert').submit((e) => {
     e.preventDefault();
@@ -8,6 +9,7 @@ $('.bitcoin-convert').submit((e) => {
     let y = getUserBitcoin();
     getCurrentRate().then((rate)=> {
         console.log("test");
+    
         var Amount = convertAmountBTC(y, rate);
         console.log(Amount);
         renderResults(Amount);
@@ -16,3 +18,8 @@ $('.bitcoin-convert').submit((e) => {
 })
 
 console.log('hello');
+
+$(() =>{
+    
+    jobFormHandler();
+});
