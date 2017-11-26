@@ -136,6 +136,10 @@ h5 {
   border:outset;
   background-color: darkslategray;
 }
+.rate-btc {
+  color:white;
+  font-size: 20px;
+}
 @media screen (max-width:240px) {
   body {
     width:100%;

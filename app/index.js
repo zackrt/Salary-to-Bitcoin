@@ -6,6 +6,7 @@ import { jobFormHandler } from './SalaryinBitcoin';
 $('.bitcoin-convert').submit((e) => {
     e.preventDefault(); 
     let y = getUserBitcoin();
+    console.log(getCurrentRate);
     getCurrentRate().then((rate)=> {
         console.log("test");
         var Amount = convertAmountBTC(y, rate);

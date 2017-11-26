@@ -10351,7 +10351,7 @@ function renderResults(Amount) {
     console.log(Amount);
     (0, _jquery2.default)("#conversion-results").html("" + Amount.toString());
     //return rate of 1 btc in h2 span class "rate-btc"
-    (0, _jquery2.default)(".rate-btc").html("" + bpi.USD.rate_float);
+    (0, _jquery2.default)(".rate-btc").html("" + data.bpi.USD.rate_float);
 }
 
 /***/ }),
@@ -10453,6 +10453,7 @@ var jobFormHandler = exports.jobFormHandler = function jobFormHandler() {
           console.log('rate', rate, job.maximum);
           (0, _jquery2.default)('.salary-results').append('<div class="job-listing-output">\n      <div class="Position-Title">' + job.position_title + '</div>\n      <div class="max-salary">\n      <h4>Max. Salary:$' + job.maximum + '\n      </h4>\n      </div> <div class="salary-over-bitcoin">\n      </h5>This Salary Equals:' + SalarydividedbyBitcoin(rate, job.maximum) + '\n      BTC</h5>\n      </div>');
         }
+        // Marius Banea no catch error in promise
         //line 28 how to return a float of ten-thousandths .0001?
       } catch (err) {
         _didIteratorError = true;
@@ -10472,7 +10473,7 @@ var jobFormHandler = exports.jobFormHandler = function jobFormHandler() {
   });
 };
 function SalarydividedbyBitcoin(rate, maximum) {
-  //trying to reduce output of salary/btc to 4 decimal places
+  //trying to reduce output of salary/btc to 4 decimal places, parseFloat?
   var roundedBTC = parseInt(maximum.toFixed(4));
   console.log(roundedBTC);
 
@@ -10501,6 +10502,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 (0, _jquery2.default)('.bitcoin-convert').submit(function (e) {
     e.preventDefault();
     var y = (0, _coindeskService.getUserBitcoin)();
+    console.log(_coindeskService.getCurrentRate);
     (0, _coindeskService.getCurrentRate)().then(function (rate) {
         console.log("test");
         var Amount = (0, _coindeskService.convertAmountBTC)(y, rate);
