@@ -123,8 +123,14 @@ input {
   padding-top:10px;
   width:200px;
 }
-.Position-Salary {
-
+h5 {
+  color: black;
+}
+.Position-Title {
+  color: black;
+}
+.job-listing-output {
+  border:outset;
 }
 @media screen (max-width:240px) {
   body {

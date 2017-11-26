@@ -10351,6 +10351,7 @@ function renderResults(Amount) {
     console.log("renderResults");
     console.log(Amount);
     (0, _jquery2.default)("#conversion-results").html("" + Amount.toString());
+    (0, _jquery2.default)(".rate-btc").html("" + _coindeskService.rate.toString());
 }
 // how to render results in 
 // how to send Amount to Next page to display top 4 items they can buy with that much USD
@@ -10384,6 +10385,7 @@ var getCurrentRate = exports.getCurrentRate = function getCurrentRate() {
   return _jquery2.default.getJSON(Coindesk_URL).then(function (data) {
     console.log(data);
     return data.bpi.USD.rate_float;
+    //showRate();      
   });
 };
 function getUserBitcoin() {
@@ -10398,11 +10400,15 @@ function convertAmountBTC(UserBitcoin, rate) {
   //add IF the number is less than 21,000,000
   //if (Number(UserBitcoin)) {
   UserDollars = UserBitcoin * rate;
-  console.log('Testing');
+  console.log(rate);
 
   return UserDollars;
   // }
 }
+//On page load show rate of 1.0 BTC from CoindeskAPI
+//function showRate() {
+//$('.rate-btc').html(1 * ${data.bpi.USD.rate_float});
+//}
 
 /***/ }),
 /* 3 */
@@ -10437,7 +10443,6 @@ var jobFormHandler = exports.jobFormHandler = function jobFormHandler() {
     }).then(function (data) {
       console.log(data);
       console.log("Hello");
-      //var govSalary = data;
       (0, _jquery2.default)('.salary-results').html("");
       var _iteratorNormalCompletion = true;
       var _didIteratorError = false;
@@ -10448,7 +10453,7 @@ var jobFormHandler = exports.jobFormHandler = function jobFormHandler() {
           var job = _step.value;
 
           console.log('rate', rate, job.maximum);
-          (0, _jquery2.default)('.salary-results').append('<div class="Position-Title">' + job.position_title + '</div> <div class="salary-over-bitcoin">\n      </h4>This Salary Equals:' + SalarydividedbyBitcoin(rate, job.maximum) + '\n      BTC</h4>\n      <div class="max-salary">\n      <h5>Salary:$' + job.maximum + '\n      </h5>\n      </div>');
+          (0, _jquery2.default)('.salary-results').append('<div class="job-listing-output">\n      <div class="Position-Title">' + job.position_title + '</div>\n      <div class="max-salary">\n      <h4>Max. Salary:$' + job.maximum + '\n      </h4>\n      </div> <div class="salary-over-bitcoin">\n      </h5>This Salary Equals:' + SalarydividedbyBitcoin(rate, job.maximum) + '\n      BTC</h5>\n      </div>');
         }
       } catch (err) {
         _didIteratorError = true;
@@ -10492,11 +10497,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 (0, _jquery2.default)('.bitcoin-convert').submit(function (e) {
     e.preventDefault();
-
     var y = (0, _coindeskService.getUserBitcoin)();
     (0, _coindeskService.getCurrentRate)().then(function (rate) {
         console.log("test");
-
         var Amount = (0, _coindeskService.convertAmountBTC)(y, rate);
         console.log(Amount);
         (0, _RenderResults.renderResults)(Amount);

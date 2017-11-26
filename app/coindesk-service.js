@@ -8,8 +8,8 @@ export const getCurrentRate = () => {
   //Promise .get with parameter Coindesk URL with jQuery .then that accepts params (data)
   return $.getJSON(Coindesk_URL).then((data) => {
         console.log(data);
-        return data.bpi.USD.rate_float
-        ;
+        return data.bpi.USD.rate_float;
+        //showRate();      
   });
 };
 export function getUserBitcoin() {
@@ -24,8 +24,12 @@ export function convertAmountBTC(UserBitcoin, rate){
   //add IF the number is less than 21,000,000
   //if (Number(UserBitcoin)) {
     UserDollars = UserBitcoin * rate;
-    console.log('Testing');
+    console.log(rate);
     
     return UserDollars;
  // }
 }
+//On page load show rate of 1.0 BTC from CoindeskAPI
+//function showRate() {
+  //$('.rate-btc').html(1 * ${data.bpi.USD.rate_float});
+//}

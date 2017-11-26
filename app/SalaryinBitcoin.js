@@ -16,16 +16,17 @@ $('#jobs-form').submit((event) => {
   }).then(data => {
     console.log(data);
     console.log("Hello");
-    //var govSalary = data;
     $('.salary-results').html("");
     for (const job of data) {
       console.log('rate', rate, job.maximum);
-      $('.salary-results').append(`<div class="Position-Title">${job.position_title}</div> <div class="salary-over-bitcoin">
-      </h4>This Salary Equals:${SalarydividedbyBitcoin(rate,job.maximum)}
-      BTC</h4>
+      $('.salary-results').append(`<div class="job-listing-output">
+      <div class="Position-Title">${job.position_title}</div>
       <div class="max-salary">
-      <h5>Salary:$${job.maximum}
-      </h5>
+      <h4>Max. Salary:$${job.maximum}
+      </h4>
+      </div> <div class="salary-over-bitcoin">
+      </h5>This Salary Equals:${SalarydividedbyBitcoin(rate,job.maximum)}
+      BTC</h5>
       </div>`);
     }
   });
@@ -34,4 +35,5 @@ $('#jobs-form').submit((event) => {
 function SalarydividedbyBitcoin(rate, maximum) {
   return maximum / rate ;
 }
+
 
