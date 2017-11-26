@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -10411,46 +10411,6 @@ function convertAmountBTC(UserBitcoin, rate) {
 "use strict";
 
 
-var _jquery = __webpack_require__(0);
-
-var _jquery2 = _interopRequireDefault(_jquery);
-
-var _coindeskService = __webpack_require__(2);
-
-var _RenderResults = __webpack_require__(1);
-
-var _SalaryinBitcoin = __webpack_require__(4);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-(0, _jquery2.default)('.bitcoin-convert').submit(function (e) {
-    e.preventDefault();
-
-    var y = (0, _coindeskService.getUserBitcoin)();
-    (0, _coindeskService.getCurrentRate)().then(function (rate) {
-        console.log("test");
-
-        var Amount = (0, _coindeskService.convertAmountBTC)(y, rate);
-        console.log(Amount);
-        (0, _RenderResults.renderResults)(Amount);
-    });
-    //convertAmountBTC(); redundant
-});
-
-console.log('hello');
-
-(0, _jquery2.default)(function () {
-
-    (0, _SalaryinBitcoin.jobFormHandler)();
-});
-
-/***/ }),
-/* 4 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -10488,7 +10448,7 @@ var jobFormHandler = exports.jobFormHandler = function jobFormHandler() {
           var job = _step.value;
 
           console.log('rate', rate, job.maximum);
-          (0, _jquery2.default)('.salary-results').append('<div class="Position-Title">' + job.position_title + '</div> <div class="salary-over-bitcoin">' + SalarydividedbyBitcoin(rate, job.maximum) + '</div>');
+          (0, _jquery2.default)('.salary-results').append('<div class="Position-Title">' + job.position_title + '</div> <div class="salary-over-bitcoin">\n      </h4>This Salary Equals:' + SalarydividedbyBitcoin(rate, job.maximum) + '\n      BTC</h4>\n      <div class="max-salary">\n      <h5>Salary:$' + job.maximum + '\n      </h5>\n      </div>');
         }
       } catch (err) {
         _didIteratorError = true;
@@ -10510,6 +10470,46 @@ var jobFormHandler = exports.jobFormHandler = function jobFormHandler() {
 function SalarydividedbyBitcoin(rate, maximum) {
   return maximum / rate;
 }
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _jquery = __webpack_require__(0);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+var _coindeskService = __webpack_require__(2);
+
+var _RenderResults = __webpack_require__(1);
+
+var _SalaryinBitcoin = __webpack_require__(3);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+(0, _jquery2.default)('.bitcoin-convert').submit(function (e) {
+    e.preventDefault();
+
+    var y = (0, _coindeskService.getUserBitcoin)();
+    (0, _coindeskService.getCurrentRate)().then(function (rate) {
+        console.log("test");
+
+        var Amount = (0, _coindeskService.convertAmountBTC)(y, rate);
+        console.log(Amount);
+        (0, _RenderResults.renderResults)(Amount);
+    });
+    //convertAmountBTC(); redundant
+});
+
+console.log('hello');
+
+(0, _jquery2.default)(function () {
+
+    (0, _SalaryinBitcoin.jobFormHandler)();
+});
 
 /***/ })
 /******/ ]);

@@ -20,7 +20,13 @@ $('#jobs-form').submit((event) => {
     $('.salary-results').html("");
     for (const job of data) {
       console.log('rate', rate, job.maximum);
-      $('.salary-results').append(`<div class="Position-Title">${job.position_title}</div> <div class="salary-over-bitcoin">${SalarydividedbyBitcoin(rate,job.maximum)}</div>`);
+      $('.salary-results').append(`<div class="Position-Title">${job.position_title}</div> <div class="salary-over-bitcoin">
+      </h4>This Salary Equals:${SalarydividedbyBitcoin(rate,job.maximum)}
+      BTC</h4>
+      <div class="max-salary">
+      <h5>Salary:$${job.maximum}
+      </h5>
+      </div>`);
     }
   });
 })

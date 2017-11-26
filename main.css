@@ -106,9 +106,14 @@ body {
 button {
   width: 100px; 
   height:50px;
+  border-radius: 20%;
+  background-color:black;
+  color:yellow;
+  font-size: 18px;
 }
 button:hover {
   color:dodgerblue;
+  background-color: white;
 }
 
 input {
