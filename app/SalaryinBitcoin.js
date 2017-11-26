@@ -29,11 +29,17 @@ $('#jobs-form').submit((event) => {
       BTC</h5>
       </div>`);
     }
+    //line 28 how to return a float of ten-thousandths .0001?
   });
 })
 };
 function SalarydividedbyBitcoin(rate, maximum) {
-  return maximum / rate ;
+  //trying to reduce output of salary/btc to 4 decimal places, parseFloat?
+  var roundedBTC = parseInt(maximum.toFixed(4));
+  console.log(roundedBTC);
+
+  return roundedBTC / rate ;
+  
 }
 
 

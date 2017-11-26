@@ -10346,15 +10346,13 @@ var _coindeskService = __webpack_require__(2);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-//not getting called yet!!
 function renderResults(Amount) {
     console.log("renderResults");
     console.log(Amount);
     (0, _jquery2.default)("#conversion-results").html("" + Amount.toString());
-    (0, _jquery2.default)(".rate-btc").html("" + _coindeskService.rate.toString());
+    //return rate of 1 btc in h2 span class "rate-btc"
+    (0, _jquery2.default)(".rate-btc").html("" + bpi.USD.rate_float);
 }
-// how to render results in 
-// how to send Amount to Next page to display top 4 items they can buy with that much USD
 
 /***/ }),
 /* 2 */
@@ -10401,7 +10399,6 @@ function convertAmountBTC(UserBitcoin, rate) {
   //if (Number(UserBitcoin)) {
   UserDollars = UserBitcoin * rate;
   console.log(rate);
-
   return UserDollars;
   // }
 }
@@ -10409,6 +10406,7 @@ function convertAmountBTC(UserBitcoin, rate) {
 //function showRate() {
 //$('.rate-btc').html(1 * ${data.bpi.USD.rate_float});
 //}
+// how to convert
 
 /***/ }),
 /* 3 */
@@ -10455,6 +10453,7 @@ var jobFormHandler = exports.jobFormHandler = function jobFormHandler() {
           console.log('rate', rate, job.maximum);
           (0, _jquery2.default)('.salary-results').append('<div class="job-listing-output">\n      <div class="Position-Title">' + job.position_title + '</div>\n      <div class="max-salary">\n      <h4>Max. Salary:$' + job.maximum + '\n      </h4>\n      </div> <div class="salary-over-bitcoin">\n      </h5>This Salary Equals:' + SalarydividedbyBitcoin(rate, job.maximum) + '\n      BTC</h5>\n      </div>');
         }
+        //line 28 how to return a float of ten-thousandths .0001?
       } catch (err) {
         _didIteratorError = true;
         _iteratorError = err;
@@ -10473,7 +10472,11 @@ var jobFormHandler = exports.jobFormHandler = function jobFormHandler() {
   });
 };
 function SalarydividedbyBitcoin(rate, maximum) {
-  return maximum / rate;
+  //trying to reduce output of salary/btc to 4 decimal places
+  var roundedBTC = parseInt(maximum.toFixed(4));
+  console.log(roundedBTC);
+
+  return roundedBTC / rate;
 }
 
 /***/ }),
@@ -10510,7 +10513,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 console.log('hello');
 
 (0, _jquery2.default)(function () {
-
     (0, _SalaryinBitcoin.jobFormHandler)();
 });
 

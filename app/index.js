@@ -18,6 +18,5 @@ $('.bitcoin-convert').submit((e) => {
 console.log('hello');
 
 $(() =>{
-    
     jobFormHandler();
 });

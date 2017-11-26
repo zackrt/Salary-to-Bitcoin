@@ -25,7 +25,6 @@ export function convertAmountBTC(UserBitcoin, rate){
   //if (Number(UserBitcoin)) {
     UserDollars = UserBitcoin * rate;
     console.log(rate);
-    
     return UserDollars;
  // }
 }
@@ -33,3 +32,4 @@ export function convertAmountBTC(UserBitcoin, rate){
 //function showRate() {
   //$('.rate-btc').html(1 * ${data.bpi.USD.rate_float});
 //}
+// how to convert 

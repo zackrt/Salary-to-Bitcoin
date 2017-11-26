@@ -1,12 +1,10 @@
 import $ from 'jquery';
-import { getUserBitcoin,UserDollars,rate } from "./coindesk-service";
+import { getUserBitcoin,UserDollars,getCurrentRate } from "./coindesk-service";
 
-//not getting called yet!!
 export function renderResults(Amount) {
     console.log("renderResults");
     console.log(Amount);
     $("#conversion-results").html(`${Amount.toString()}`);
-    $(".rate-btc").html(`${rate.toString()}`);
+    //return rate of 1 btc in h2 span class "rate-btc"
+    $(".rate-btc").html(`${bpi.USD.rate_float}`);
 }
-// how to render results in 
-// how to send Amount to Next page to display top 4 items they can buy with that much USD
