@@ -30,6 +30,6 @@ export function convertAmountBTC(UserBitcoin, rate){
 }
 //On page load show rate of 1.0 BTC from CoindeskAPI
 //function showRate() {
-  //$('.rate-btc').html(1 * ${data.bpi.USD.rate_float});
+//$('.rate-btc').html(1 * ${data.bpi.USD.rate_float});
 //}
 // how to convert 
