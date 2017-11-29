@@ -28,7 +28,9 @@ export function convertAmountBTC(UserBitcoin, rate){
     return UserDollars;
  // }
 }
-//On page load show rate of 1.0 BTC from CoindeskAPI
+//On page load or submit show rate of 1.0 BTC from CoindeskAPI?
+//trying to reduce output of salary/btc to 4 decimal places, parseFloat?
+//error from github pages about bundle.js
 //function showRate() {
 //$('.rate-btc').html(1 * ${data.bpi.USD.rate_float});
 //}
