@@ -10399,12 +10399,13 @@ function convertAmountBTC(UserBitcoin, rate) {
   //if (Number(UserBitcoin)) {
   UserDollars = UserBitcoin * rate;
   console.log(rate);
+  (0, _jquery2.default)('#one-coin').text(rate);
   return UserDollars;
   // }
 }
 //On page load or submit show rate of 1.0 BTC from CoindeskAPI?
 //trying to reduce output of salary/btc to 4 decimal places, parseFloat?
-//error from github pages about bundle.js
+//error from github pages about bundle.js (added ./ to dist/bundle.js)
 //function showRate() {
 //$('.rate-btc').html(1 * ${data.bpi.USD.rate_float});
 //}
@@ -10476,10 +10477,11 @@ var jobFormHandler = exports.jobFormHandler = function jobFormHandler() {
 };
 function SalarydividedbyBitcoin(rate, maximum) {
   //trying to reduce output of salary/btc to 4 decimal places, parseFloat?
-  var roundedBTC = parseInt(maximum.toFixed(4));
+  var roundedBTC = parseInt(maximum);
   console.log(roundedBTC);
 
-  return roundedBTC / rate;
+  var salaryResults = roundedBTC / rate;
+  return salaryResults.toFixed(4);
 }
 
 /***/ }),
@@ -10501,23 +10503,26 @@ var _SalaryinBitcoin = __webpack_require__(3);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-(0, _jquery2.default)('.bitcoin-convert').submit(function (e) {
-    e.preventDefault();
-    var y = (0, _coindeskService.getUserBitcoin)();
-    console.log(_coindeskService.getCurrentRate);
-    (0, _coindeskService.getCurrentRate)().then(function (rate) {
-        console.log("test");
-        var Amount = (0, _coindeskService.convertAmountBTC)(y, rate);
-        console.log(Amount);
-        (0, _RenderResults.renderResults)(Amount);
-    });
-    //convertAmountBTC(); redundant
-});
-
 console.log('hello');
 
 (0, _jquery2.default)(function () {
     (0, _SalaryinBitcoin.jobFormHandler)();
+    (0, _jquery2.default)('.bitcoin-convert').submit(function (e) {
+        e.preventDefault();
+        var y = (0, _coindeskService.getUserBitcoin)();
+        console.log(_coindeskService.getCurrentRate);
+        (0, _coindeskService.getCurrentRate)().then(function (rate) {
+            console.log("test");
+            var Amount = (0, _coindeskService.convertAmountBTC)(y, rate);
+            console.log(Amount);
+            (0, _RenderResults.renderResults)(Amount);
+        });
+        //convertAmountBTC(); redundant
+    });
+    (0, _jquery2.default)(".start").click(function () {
+        (0, _jquery2.default)(".intro").hide();
+        (0, _jquery2.default)(".home-screen").show();
+    });
 });
 
 /***/ })

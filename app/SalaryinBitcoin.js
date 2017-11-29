@@ -36,9 +36,10 @@ $('#jobs-form').submit((event) => {
 };
 function SalarydividedbyBitcoin(rate, maximum) {
   //trying to reduce output of salary/btc to 4 decimal places, parseFloat?
-  var roundedBTC = parseInt(maximum.toFixed(4));
+  var roundedBTC = parseInt(maximum);
   console.log(roundedBTC);
 
-  return roundedBTC / rate ;
+  let salaryResults = roundedBTC / rate ;
+  return salaryResults.toFixed(4);
   
 }

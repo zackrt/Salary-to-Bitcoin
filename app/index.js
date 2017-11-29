@@ -3,21 +3,26 @@ import { getCurrentRate, getUserBitcoin, convertAmountBTC } from "./coindesk-ser
 import { renderResults } from './RenderResults';
 import { jobFormHandler } from './SalaryinBitcoin';
 
-$('.bitcoin-convert').submit((e) => {
-    e.preventDefault(); 
-    let y = getUserBitcoin();
-    console.log(getCurrentRate);
-    getCurrentRate().then((rate)=> {
-        console.log("test");
-        var Amount = convertAmountBTC(y, rate);
-        console.log(Amount);
-        renderResults(Amount);
-    });
-    //convertAmountBTC(); redundant
-})
+
 
 console.log('hello');
 
 $(() =>{
     jobFormHandler();
+    $('.bitcoin-convert').submit((e) => {
+        e.preventDefault(); 
+        let y = getUserBitcoin();
+        console.log(getCurrentRate);
+        getCurrentRate().then((rate)=> {
+            console.log("test");
+            var Amount = convertAmountBTC(y, rate);
+            console.log(Amount);
+            renderResults(Amount);
+        });
+        //convertAmountBTC(); redundant
+    })
+    $(".start").click(()=>{
+        $(".intro").hide();
+        $(".home-screen").show();
+    })
 });
