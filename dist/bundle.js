@@ -10455,6 +10455,7 @@ var jobFormHandler = exports.jobFormHandler = function jobFormHandler() {
 
           console.log('rate', rate, job.maximum);
           (0, _jquery2.default)('.salary-results').append('<div class="job-listing-output">\n      <div class="Position-Title">' + job.position_title + '</div>\n      <div class="max-salary">\n      <h4>Max. Salary:$' + job.maximum + '\n      </h4>\n      </div> <div class="salary-over-bitcoin">\n      </h5>This Salary Equals:' + SalarydividedbyBitcoin(rate, job.maximum) + '\n      BTC</h5>\n      </div>');
+          //create a div to add a link to the posting?
         }
         // Marius Banea no catch error in promise
         //line 28 how to return a float of ten-thousandths .0001?

@@ -114,6 +114,7 @@ h5 {
     display:flex;
     flex-direction:column;
     width:100;
+    display:none;
   }
   .page-body {
     display:flex;

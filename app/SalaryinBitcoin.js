@@ -28,6 +28,7 @@ $('#jobs-form').submit((event) => {
       </h5>This Salary Equals:${SalarydividedbyBitcoin(rate,job.maximum)}
       BTC</h5>
       </div>`);
+      //create a div to add a link to the posting?
     }
     // Marius Banea no catch error in promise
     //line 28 how to return a float of ten-thousandths .0001?
