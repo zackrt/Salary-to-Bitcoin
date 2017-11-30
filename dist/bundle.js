@@ -10436,7 +10436,7 @@ var jobFormHandler = exports.jobFormHandler = function jobFormHandler() {
   (0, _jquery2.default)('#jobs-form').submit(function (event) {
     event.preventDefault();
     var query = (0, _jquery2.default)('#job-query').val();
-    var rate = (0, _jquery2.default)("#conversion-results").text();
+    var rate = (0, _jquery2.default)("#one-coin").text();
     console.log('original rate', rate);
     rate = Number(rate);
     _jquery2.default.getJSON(url, {

@@ -8,7 +8,7 @@ export const jobFormHandler = ()=> {
 $('#jobs-form').submit((event) => {
   event.preventDefault();
   const query = $('#job-query').val();
-  let rate = $("#conversion-results").text();
+  let rate = $("#one-coin").text();
   console.log('original rate', rate);
   rate = Number(rate);
   $.getJSON(url, {
