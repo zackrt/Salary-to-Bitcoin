@@ -12,5 +12,5 @@ user can close window, or search again.
 
 //don't style the body, but put inside a container
 //.splice(0,5) is an array function , takes the start point, here 0 or first item in the array, and //then take the next five items or 0,1,2,3,4. it removes those items and 
-search a team or a playet points per game
+search a team or a player points per game
 

@@ -28,10 +28,9 @@ $('#jobs-form').submit((event) => {
       </h5>This Salary Equals:${SalarydividedbyBitcoin(rate,job.maximum)}
       BTC</h5>
       </div>`);
-      //create a div to add a link to the posting?
+      //create a div to add a link to the posting href=job.url?
     }
     // Marius Banea no catch error in promise
-    //line 28 how to return a float of ten-thousandths .0001?
   });
 })
 };
@@ -41,6 +40,7 @@ function SalarydividedbyBitcoin(rate, maximum) {
   console.log(roundedBTC);
 
   let salaryResults = roundedBTC / rate ;
+  //to return a float of ten-thousandths .0001?
   return salaryResults.toFixed(4);
   
 }
