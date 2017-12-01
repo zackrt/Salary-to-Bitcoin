@@ -19,8 +19,8 @@ $('#jobs-form').submit((event) => {
     $('.salary-results').html("");
     for (const job of data.splice(0,5)) {
       console.log('rate', rate, job.maximum);
-      $('.salary-results').append(`<div class="job-listing-output">
-      <div class="Position-Title">${job.position_title}</div>
+      $('.salary-results').append(`<div class="job-listing-output"><a href="${job.url}">
+      <div class="Position-Title">${job.position_title}</div></a>
       <div class="max-salary">
       <h4>Max. Salary:$${job.maximum}
       </h4>
