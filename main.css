@@ -48,6 +48,7 @@ body {
   border-style: outset;
   margin-bottom: 50px;
   background: fixed;
+  max-width: 640px;
 }
 .show-jobs {
   border-top: outset;
@@ -83,15 +84,32 @@ h5 {
   color: rgb(255, 255, 0);
 }
 .job-listing-output {
+  padding-bottom:60px;
+  padding-top:60px;
   border:outset;
   background-color: darkslategray;
 }
 .rate-btc {
   color:white;
-  font-size: 20px;
+  font-size: 24px;
+  margin-bottom: 200px;
+}
+.display-current-rate {
+  padding-bottom: 40px;
+  font-size: 24px;
+  
 }
 .home-screen {
   display: none;
+  max-width: 640px;
+}
+.summary {
+  line-height: 33px;
+  padding-left:20px; 
+  padding-right:20px;
+}
+.start {
+  margin-bottom: 20px;
 }
 @media only screen and (max-width:680px) {
   html,body {

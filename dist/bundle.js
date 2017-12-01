@@ -10450,7 +10450,7 @@ var jobFormHandler = exports.jobFormHandler = function jobFormHandler() {
       var _iteratorError = undefined;
 
       try {
-        for (var _iterator = data[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+        for (var _iterator = data.splice(0, 5)[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
           var job = _step.value;
 
           console.log('rate', rate, job.maximum);
