@@ -17,6 +17,7 @@ $('#jobs-form').submit((event) => {
     console.log(data);
     console.log("Hello");
     $('.salary-results').html("");
+    //get data back form the api, and loop through the items in the response, and get stored in the job var, and appending the html
     for (const job of data.splice(0,5)) {
       console.log('rate', rate, job.maximum);
       $('.salary-results').append(`<div class="job-listing-output"><a href="${job.url}">
