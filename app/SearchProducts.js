@@ -1,1 +1,0 @@
-//uses stored variable of users dollars/ amount, to display items they can acquire with that amount, displayed after pressing Next, or OK, retailer API 
