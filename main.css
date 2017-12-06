@@ -1,16 +1,16 @@
 /* ---- reset ---- */
 
 body {
-  
   margin: 0;
-  
 }
+
 h1 {
   background-color: gold;
   color:black;
   text-align: center;
   border-style: inset;
 }
+
 h2 {
   color:white;
   background-color:black;
@@ -19,6 +19,7 @@ h2 {
   text-align: center;
   margin: auto;
 }
+
 form {
   font-style:italic;
   color:white;
@@ -30,9 +31,10 @@ form {
   align-items: center;
   background-color: darkblue;
 }
+
 .intro {
   font-weight: bold;
-  font-size:26px;
+  font-size: 26px;
   color:white;
   text-align: center;
   background-color: darkblue;
@@ -43,7 +45,7 @@ form {
   margin-left: auto;
   margin-top: 130px;
   margin-right: auto;
-  display:flex;
+  display: flex;
   flex-direction: column;
   margin-bottom: 50px;
   background: fixed;
@@ -51,6 +53,7 @@ form {
   background-color: darkblue;
   align-items: center;
 }
+
 section {
   font:normal 75% Arial, Helvetica, sans-serif;
   border: silver;
@@ -69,6 +72,7 @@ section {
   align-items: center;
   min-width:320px;
 }
+
 .show-jobs {
   display: flex;
   border-top: outset;
@@ -77,6 +81,7 @@ section {
   align-items: center;
   text-align: center;
 }
+
 button {
   width: 100px; 
   height: 50px;
@@ -85,6 +90,7 @@ button {
   color:yellow;
   font-size: 18px;
 }
+
 button:hover {
   color:dodgerblue;
   background-color: white;
@@ -99,16 +105,19 @@ input {
   padding-left:5px;
   font-size: 13px;
 }
+
 h5 {
   color: black;
 }
+
 .Position-Title {
   color: rgb(255, 255, 0);
 }
+
 .job-listing-output {
-  padding-bottom:60px;
-  padding-top:60px;
-  border:outset;
+  padding-bottom: 60px;
+  padding-top: 60px;
+  border: outset;
   background-color: darkblue;
 }
 
