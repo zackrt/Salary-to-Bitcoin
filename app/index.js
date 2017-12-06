@@ -5,8 +5,7 @@ import { jobFormHandler } from './SalaryinBitcoin';
 
 
 
-console.log('hello');
-
+//On document ready, shows intro & start btn, then takes user input of amount of Bitcoin to US dollars, 
 $(() =>{
     jobFormHandler();
     $('.bitcoin-convert').submit((e) => {

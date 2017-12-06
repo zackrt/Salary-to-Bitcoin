@@ -1,7 +1,7 @@
 import $ from 'jquery';
 import {renderResults} from "./RenderResults";
 
-
+//.getJSON from Coindesk API for current rate of bitcoin in usd as float
 const Coindesk_URL = "https://api.coindesk.com/v1/bpi/currentprice.json";
 
 export const getCurrentRate = () => {

@@ -10376,6 +10376,7 @@ var _RenderResults = __webpack_require__(1);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+//.getJSON from Coindesk API for current rate of bitcoin in usd as float
 var Coindesk_URL = "https://api.coindesk.com/v1/bpi/currentprice.json";
 
 var getCurrentRate = exports.getCurrentRate = function getCurrentRate() {
@@ -10505,8 +10506,7 @@ var _SalaryinBitcoin = __webpack_require__(3);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-console.log('hello');
-
+//On document ready, shows intro & start btn, then takes user input of amount of Bitcoin to US dollars, 
 (0, _jquery2.default)(function () {
     (0, _SalaryinBitcoin.jobFormHandler)();
     (0, _jquery2.default)('.bitcoin-convert').submit(function (e) {
