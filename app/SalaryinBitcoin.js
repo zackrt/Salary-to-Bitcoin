@@ -20,15 +20,16 @@ $('#jobs-form').submit((event) => {
     //get data back form the api, and loop through the items in the response, and get stored in the job var, and appending the html
     for (const job of data.splice(0,5)) {
       console.log('rate', rate, job.maximum);
-      $('.salary-results').append(`<div class="job-listing-output"><a href="${job.url}">
+      $('.salary-results').append(`<p><div class="job-listing-output"><a href="${job.url}">
       <div class="Position-Title">${job.position_title}</div></a>
-      <div class="max-salary">
-      <h4>Max. Salary:$${job.maximum}
-      </h4>
-      </div> <div class="salary-over-bitcoin">
+      <p class="max-salary">
+      <h5>Max. Salary:$${job.maximum}
+      </h5>
+      </p> <p class="salary-over-bitcoin">
       </h5>This Salary Equals:${SalarydividedbyBitcoin(rate,job.maximum)}
       BTC</h5>
-      </div>`);
+      </p>
+      </p>`);
       //create a div to add a link to the posting href=job.url?
     }
     // Marius Banea no catch error in promise

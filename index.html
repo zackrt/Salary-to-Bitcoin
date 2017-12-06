@@ -11,26 +11,26 @@
 
 <body class="page-body" style ="background-image:url(https://www.xmple.com/wallpaper/honeycomb-hexagon-orange-beehive-3200x1800-c2-eeaa0c-6f510b-l2-25-287-a-0-f-5.svg)">
   
-  <section class ="intro"><h1>Salary to BitCoin Calculator</h1><p class ="summary">Welcome to The Salary-to-BitCoin Calculator<br> Input how much BTC you own & see it's value, then search current government jobs to view the maximum salary & then how many bitcoin the salary is worth!</p>
+  <section class ="intro"><h1>Salary to Bitcoin Calculator</h1><p class ="summary">Welcome to The Salary-to-Bitcoin Calculator<br> Input how much BTC you own & see it's value, then search current government jobs to view the maximum salary & then how many bitcoin the salary is worth!</p>
       <button class="start">START</button>
   </section>
   
   <section class="home-screen" >
-  <h1>Salary to BitCoin Calculator</h1>
+  <h1>Salary to Bitcoin Calculator</h1>
   <h2>Bitcoin conversion to $USD</h2>
   <form class="bitcoin-convert">
-    <label>Amount of Bitcoin owned<br>
+    <label for="Amount of user Bitcoin">Amount of Bitcoin owned<br>
     <input id ="user-bitcoin-amount" type="Bitcoin Amount" placeholder="1.0 BTC" required></label>
     <br>
     <button type="submit" id="convert">Submit</button>
   </form>
 
-  <div class="results">Results in USD: $<span id="conversion-results"></span></div><br>
-  <div class="display-current-rate">The Current Rate of 1 BTC: $<span class="rate-btc" id="one-coin"></span><br>
-  </div>
+  <p class="results">Results in USD: $<span id="conversion-results"></span></p>
+  <p class="display-current-rate">The Current Rate of 1 BTC: $<span class="rate-btc" id="one-coin"></span>
+  </p>
 
 
-  <form class="show-jobs" id="jobs-form">
+  <form class="show-jobs" id="jobs-form" role="search">
       <div>
         <label>Job Search by Keyword(s) <br>
     <input type="text" id="job-query" placeholder="i.e.-software jobs, nursing, architect" required>
@@ -38,7 +38,7 @@
     <br>
     <button class="display-jobs" type="submit" id="jobs">DISPLAY JOBS</button>
     <br>
-    <h4>See Government jobs salaries</h4>
+    <h4>See Government job salaries</h4>
     <div class="salary-results"></div>
     <br>
   </div>
