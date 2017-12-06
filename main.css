@@ -9,6 +9,7 @@ h1 {
   background-color: gold;
   color:black;
   text-align: center;
+  border-style: inset;
 }
 h2 {
   color:white;
@@ -16,7 +17,7 @@ h2 {
   width:80%; 
   border: inset;
   text-align: center;
-  margin:auto;
+  margin: auto;
 }
 form {
   font-style:italic;
@@ -27,38 +28,59 @@ form {
   padding-bottom: 15px;
   flex-direction: column;
   align-items: center;
-  background-color: darkslategray;
+  background-color: darkblue;
 }
-div {
+.intro {
   font-weight: bold;
   font-size:26px;
   color:white;
   text-align: center;
-  background-color: darkslategray;
-}
-body {
+  background-color: darkblue;
+  max-width: 640px;
+  max-height: 420px;
+  border-style: outset;
   font:normal 75% Arial, Helvetica, sans-serif;
-  border:10px silver dotted;
-  margin-left: 200px;
+  margin-left: auto;
   margin-top: 130px;
-  margin-right: 200px;
+  margin-right: auto;
   display:flex;
   flex-direction: column;
-  justify-content: center;
-  border-style: outset;
   margin-bottom: 50px;
   background: fixed;
   max-width: 640px;
+  background-color: darkblue;
+  align-items: center;
+}
+section {
+  font:normal 75% Arial, Helvetica, sans-serif;
+  border: silver;
+  margin-left: 200px;
+  margin-top: 130px;
+  margin-right: 200px;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-style: outset;
+  border-color: silver;
+  background: fixed;
+  max-width: 640px;
+  background-color: darkblue;
+  align-items: center;
+  min-width:320px;
 }
 .show-jobs {
+  display: flex;
   border-top: outset;
   font-style: normal;
-  background-color: darkslategray;
+  background-color: darkblue;
+  align-items: center;
+  text-align: center;
 }
 button {
   width: 100px; 
-  height:50px;
-  border-radius: 20%;
+  height: 50px;
+  border-radius: 25px;
   background-color:black;
   color:yellow;
   font-size: 18px;
@@ -87,17 +109,24 @@ h5 {
   padding-bottom:60px;
   padding-top:60px;
   border:outset;
-  background-color: darkslategray;
+  background-color: darkblue;
+}
+
+.display-current-rate {
+  padding-bottom: 40px;
+  font-size: 20px;
+  text-align: center;
+  color:white;
+}
+.results {
+  color:white;
+  font-size: 24px;
+  text-align: center;
 }
 .rate-btc {
   color:white;
-  font-size: 24px;
+  font-size: 20px;
   margin-bottom: 200px;
-}
-.display-current-rate {
-  padding-bottom: 40px;
-  font-size: 24px;
-  
 }
 .home-screen {
   display: none;
@@ -105,25 +134,31 @@ h5 {
 }
 .summary {
   line-height: 33px;
-  padding-left:20px; 
-  padding-right:20px;
+  padding-left: 20px; 
+  padding-right: 20px;
+  font-size: 19px;
+  text-align: left;
 }
 .start {
   margin-bottom: 20px;
 }
 @media only screen and (max-width:680px) {
-  html,body {
+  html, .intro {
     display:flex;
     flex-direction:column;
     width:100%;
     margin:0;
     height:100;
+    margin-top:30pt;
   }
   form {
     display:flex;
     flex-direction:column;
     width:100%;
     color:red;
+  }
+  section {
+    margin:auto; 
   }
   main {
     display:flex;
@@ -133,7 +168,7 @@ h5 {
   .home-screen {
     display:flex;
     flex-direction:column;
-    width:100;
+    width:100%;
     display:none;
   }
   .page-body {

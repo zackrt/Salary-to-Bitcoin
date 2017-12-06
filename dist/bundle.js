@@ -10445,6 +10445,7 @@ var jobFormHandler = exports.jobFormHandler = function jobFormHandler() {
       console.log(data);
       console.log("Hello");
       (0, _jquery2.default)('.salary-results').html("");
+      //get data back form the api, and loop through the items in the response, and get stored in the job var, and appending the html
       var _iteratorNormalCompletion = true;
       var _didIteratorError = false;
       var _iteratorError = undefined;
