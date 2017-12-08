@@ -10346,9 +10346,8 @@ var _coindeskService = __webpack_require__(2);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+//takes Amount from 
 function renderResults(Amount) {
-    console.log("renderResults");
-    console.log(Amount);
     (0, _jquery2.default)("#conversion-results").html("" + Amount.toString());
     //return rate of 1 btc in h2 span class "rate-btc"
     (0, _jquery2.default)(".rate-btc").html("" + data.bpi.USD.rate_float);
@@ -10430,7 +10429,7 @@ var _jquery2 = _interopRequireDefault(_jquery);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var url = "https://api.usa.gov/jobs/search.json";
+var url = "https://jobs.search.gov/jobs/search.json?";
 console.log((0, _jquery2.default)('#jobs-form'));
 
 var jobFormHandler = exports.jobFormHandler = function jobFormHandler() {

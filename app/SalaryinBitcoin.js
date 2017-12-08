@@ -1,7 +1,7 @@
 import $ from 'jquery';
 
 const url =
-"https://api.usa.gov/jobs/search.json";
+"https://jobs.search.gov/jobs/search.json?";
 console.log($('#jobs-form'));
 
 export const jobFormHandler = ()=> {
