@@ -20,7 +20,7 @@
   <h2>Bitcoin conversion to $USD</h2>
   <form class="bitcoin-convert">
     <label for="Amount of user Bitcoin">Amount of Bitcoin owned<br>
-    <input id ="user-bitcoin-amount" type="Bitcoin Amount" placeholder="1.0 BTC" required></label>
+    <input id ="user-bitcoin-amount" type="number" placeholder="1.0 BTC" step="0.01" min="0" max="21000000"required></label>
     <br>
     <button type="submit" id="convert">Submit</button>
   </form>
