@@ -34,7 +34,16 @@
   <form class="show-jobs" id="jobs-form" role="search">
       <div>
         <label>Job Search by Keyword(s) <br>
-    <input type="text" id="job-query" placeholder="i.e.-software jobs, nursing, architect" required>
+    <input type="text" id="job-query" placeholder="i.e.-software jobs, nursing, architect" list="default-jobs" required>
+    <datalist id="default-jobs">
+        <option value="Physician jobs">
+        <option value="Pilot">
+        <option value="Software jobs">
+        <option value="Director">
+        <option value="Architect jobs">
+        <option value="Social work">
+        <option value="Teacher">
+      </datalist>
   </label>
     <br>
     <button class="display-jobs" type="submit" id="jobs">DISPLAY JOBS</button>
