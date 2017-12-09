@@ -8,14 +8,12 @@ h1 {
   background-color: gold;
   color:black;
   text-align: center;
-  border-style: inset;
 }
 
 h2 {
   color:white;
   background-color:black;
   width:80%; 
-  border: inset;
   text-align: center;
   margin: auto;
 }
@@ -29,7 +27,7 @@ form {
   padding-bottom: 15px;
   flex-direction: column;
   align-items: center;
-  background-color: darkblue;
+  background-color: #0667D0;
 }
 
 .intro {
@@ -37,10 +35,9 @@ form {
   font-size: 26px;
   color:white;
   text-align: center;
-  background-color: darkblue;
+  background-color: #0667D0;
   max-width: 640px;
   max-height: 420px;
-  border-style: outset;
   font:normal 75% Arial, Helvetica, sans-serif;
   margin-left: auto;
   margin-top: 130px;
@@ -50,7 +47,7 @@ form {
   margin-bottom: 50px;
   background: fixed;
   max-width: 640px;
-  background-color: darkblue;
+  background-color: #0667D0;
   align-items: center;
 }
 
@@ -64,20 +61,17 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border-style: outset;
-  border-color: silver;
   background: fixed;
   max-width: 640px;
-  background-color: darkblue;
+  background-color: #0667D0;
   align-items: center;
   min-width:320px;
 }
 
 .show-jobs {
   display: flex;
-  border-top: outset;
   font-style: normal;
-  background-color: darkblue;
+  background-color: #0667D0
   align-items: center;
   text-align: center;
 }
@@ -113,7 +107,6 @@ h4 {
     color:white;
     background-color:black;
     width:100%; 
-    border: inset;
     text-align: center;
     margin: auto;
 }
@@ -131,8 +124,8 @@ h5 {
 .job-listing-output {
   padding-bottom: 60px;
   padding-top: 60px;
-  border: outset;
-  background-color: darkblue;
+  border: white;
+  background-color: #0667D0;
 }
 
 .display-current-rate {
@@ -164,6 +157,10 @@ h5 {
 }
 .start {
   margin-bottom: 20px;
+}
+.center-float {
+  margin-left: auto;
+  margin-right: auto;
 }
 @media only screen and (max-width:680px) {
   html, .intro {
