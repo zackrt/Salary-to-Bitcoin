@@ -8,14 +8,16 @@ h1 {
   background-color: gold;
   color:black;
   text-align: center;
+  padding: 3px;
 }
 
 h2 {
   color:white;
   background-color:black;
-  width:80%; 
+  width:38%; 
   text-align: center;
   margin: auto;
+  padding: 3px;
 }
 
 form {
@@ -54,9 +56,9 @@ form {
 section {
   font:normal 75% Arial, Helvetica, sans-serif;
   border: silver;
-  margin-left: 200px;
+  margin-left: auto;
+  margin-right: auto;
   margin-top: 130px;
-  margin-right: 200px;
   margin-bottom: 50px;
   display: flex;
   flex-direction: column;
@@ -125,8 +127,9 @@ h5 {
 .job-listing-output {
   padding-bottom: 60px;
   padding-top: 60px;
-  border: white;
+  border: white solid;
   background-color: #0667D0;
+  padding: 2px;
 }
 
 .display-current-rate {
@@ -198,3 +201,5 @@ h5 {
     width:100;
   }
 }
+/* tablet screen media query */
+@media only screen and (max-width:786px) {
