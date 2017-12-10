@@ -5,7 +5,6 @@ body {
 }
 
 h1 {
-  /*background-color: gold;*/
   color:white;
   text-align: center;
   padding: 3px;
@@ -14,8 +13,6 @@ h1 {
 
 h2 {
   color:white;
- /* background-color:black; */
-  width:38%; 
   text-align: center;
   margin: auto;
   padding: 3px;
@@ -78,6 +75,7 @@ section {
 }
 
 button {
+  font-weight: 700;
   width: 110px; 
   height: 60px;
   background-color:black;
