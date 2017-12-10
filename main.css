@@ -5,15 +5,16 @@ body {
 }
 
 h1 {
-  background-color: gold;
-  color:black;
+  /*background-color: gold;*/
+  color:white;
   text-align: center;
   padding: 3px;
+  font-size: 28px;
 }
 
 h2 {
   color:white;
-  background-color:black;
+ /* background-color:black; */
   width:38%; 
   text-align: center;
   margin: auto;
@@ -21,7 +22,6 @@ h2 {
 }
 
 form {
-  font-style:italic;
   color:white;
   font-size:20px;
   display:flex;
@@ -29,7 +29,7 @@ form {
   padding-bottom: 15px;
   flex-direction: column;
   align-items: center;
-  background-color: #0667D0;
+  background-color: inherit;
 }
 
 .intro {
@@ -37,10 +37,9 @@ form {
   font-size: 26px;
   color:white;
   text-align: center;
-  background-color: #0667D0;
   max-width: 640px;
   max-height: 420px;
-  font:normal 75% Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   margin-left: auto;
   margin-top: 130px;
   margin-right: auto;
@@ -49,13 +48,12 @@ form {
   margin-bottom: 50px;
   background: fixed;
   max-width: 640px;
-  background-color: #0667D0;
+  background-color: #754d12;
   align-items: center;
 }
 
 section {
-  font:normal 75% Arial, Helvetica, sans-serif;
-  border: silver;
+  font-family: Helvetica, sans-serif;
   margin-left: auto;
   margin-right: auto;
   margin-top: 130px;
@@ -64,24 +62,24 @@ section {
   flex-direction: column;
   justify-content: center;
   background: fixed;
-  max-width: 640px;
-  background-color: #0667D0;
+  max-width: 700px;
+  background-color: #754d12;
   align-items: center;
-  min-width:320px;
+  min-width: 320px;
+  opacity: .88;
 }
 
 .show-jobs {
   display: flex;
   font-style: normal;
-  background-color: #0667D0
+  background-color: #754d12
   align-items: center;
   text-align: center;
 }
 
 button {
-  width: 100px; 
-  height: 50px;
-  border-radius: 25px;
+  width: 110px; 
+  height: 60px;
   background-color:black;
   color:yellow;
   font-size: 18px;
@@ -89,7 +87,7 @@ button {
 }
 
 button:hover {
-  color:dodgerblue;
+  color:green;
   background-color: white;
 }
 
@@ -108,7 +106,7 @@ input {
 h4 {
     padding:1px;
     color:white;
-    background-color:black;
+    /*background-color:black;*/
     width:100%; 
     text-align: center;
     margin: auto;
@@ -128,20 +126,20 @@ h5 {
   padding-bottom: 60px;
   padding-top: 60px;
   border: white solid;
-  background-color: #0667D0;
+  background-color: #754d12;
   padding: 2px;
 }
 
-.display-current-rate {
-  padding-bottom: 40px;
-  font-size: 20px;
+.display-current-rate, .results {
   text-align: center;
   color:white;
 }
+.display-current-rate {
+  padding-bottom: 40px;
+  font-size: 20px;
+}
 .results {
-  color:white;
   font-size: 24px;
-  text-align: center;
 }
 .rate-btc {
   color:white;
@@ -150,7 +148,7 @@ h5 {
 }
 .home-screen {
   display: none;
-  max-width: 640px;
+  max-width: 700px;
 }
 .summary {
   line-height: 33px;
@@ -166,7 +164,7 @@ h5 {
   margin-left: auto;
   margin-right: auto;
 }
-@media only screen and (max-width:680px) {
+@media only screen and (max-width: 680px) {
   html, .intro {
     display:flex;
     flex-direction:column;
@@ -202,4 +200,6 @@ h5 {
   }
 }
 /* tablet screen media query */
-@media only screen and (max-width:786px) {
+@media only screen and (min-width:786px) {
+
+}
