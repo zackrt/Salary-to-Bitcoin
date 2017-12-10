@@ -81,7 +81,7 @@ button {
   background-color:black;
   color:yellow;
   font-size: 18px;
-  box-shadow: 3px 3px white;
+  box-shadow: 2px 2px white;
 }
 
 button:hover {
