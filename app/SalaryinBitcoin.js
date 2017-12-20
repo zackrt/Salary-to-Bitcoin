@@ -9,7 +9,7 @@ $('#jobs-form').submit((event) => {
   event.preventDefault();
   const query = $('#job-query').val();
   let rate = $("#one-coin").text();
-  console.log('original rate', rate);
+  if (rate) {
   rate = Number(rate);
   $.getJSON(url, {
     query
@@ -30,10 +30,8 @@ $('#jobs-form').submit((event) => {
       BTC</h5>
       </p>
       </p>`);
-      //create a div to add a link to the posting href=job.url?
     }
-    // Marius Banea no catch error in promise
-  });
+  });} else {alert="Must click submit first!"}
 })
 };
 function SalarydividedbyBitcoin(rate, maximum) {

@@ -10437,43 +10437,44 @@ var jobFormHandler = exports.jobFormHandler = function jobFormHandler() {
     event.preventDefault();
     var query = (0, _jquery2.default)('#job-query').val();
     var rate = (0, _jquery2.default)("#one-coin").text();
-    console.log('original rate', rate);
-    rate = Number(rate);
-    _jquery2.default.getJSON(url, {
-      query: query
-    }).then(function (data) {
-      console.log(data);
-      console.log("Hello");
-      (0, _jquery2.default)('.salary-results').html("");
-      //get data back form the api, and loop through the items in the response, and get stored in the job var, and appending the html
-      var _iteratorNormalCompletion = true;
-      var _didIteratorError = false;
-      var _iteratorError = undefined;
+    if (rate) {
+      rate = Number(rate);
+      _jquery2.default.getJSON(url, {
+        query: query
+      }).then(function (data) {
+        console.log(data);
+        console.log("Hello");
+        (0, _jquery2.default)('.salary-results').html("");
+        //get data back form the api, and loop through the items in the response, and get stored in the job var, and appending the html
+        var _iteratorNormalCompletion = true;
+        var _didIteratorError = false;
+        var _iteratorError = undefined;
 
-      try {
-        for (var _iterator = data.splice(0, 5)[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-          var job = _step.value;
-
-          console.log('rate', rate, job.maximum);
-          (0, _jquery2.default)('.salary-results').append('<p><div class="job-listing-output"><a href="' + job.url + '">\n      <div class="Position-Title">' + job.position_title + '</div></a>\n      <p class="max-salary">\n      <h5>Max. Salary:$' + job.maximum + '\n      </h5>\n      </p> <p class="salary-over-bitcoin">\n      </h5>This Salary Equals:' + SalarydividedbyBitcoin(rate, job.maximum) + '\n      BTC</h5>\n      </p>\n      </p>');
-          //create a div to add a link to the posting href=job.url?
-        }
-        // Marius Banea no catch error in promise
-      } catch (err) {
-        _didIteratorError = true;
-        _iteratorError = err;
-      } finally {
         try {
-          if (!_iteratorNormalCompletion && _iterator.return) {
-            _iterator.return();
+          for (var _iterator = data.splice(0, 5)[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+            var job = _step.value;
+
+            console.log('rate', rate, job.maximum);
+            (0, _jquery2.default)('.salary-results').append('<p><div class="job-listing-output"><a href="' + job.url + '">\n      <div class="Position-Title">' + job.position_title + '</div></a>\n      <p class="max-salary">\n      <h5>Max. Salary:$' + job.maximum + '\n      </h5>\n      </p> <p class="salary-over-bitcoin">\n      </h5>This Salary Equals:' + SalarydividedbyBitcoin(rate, job.maximum) + '\n      BTC</h5>\n      </p>\n      </p>');
           }
+        } catch (err) {
+          _didIteratorError = true;
+          _iteratorError = err;
         } finally {
-          if (_didIteratorError) {
-            throw _iteratorError;
+          try {
+            if (!_iteratorNormalCompletion && _iterator.return) {
+              _iterator.return();
+            }
+          } finally {
+            if (_didIteratorError) {
+              throw _iteratorError;
+            }
           }
         }
-      }
-    });
+      });
+    } else {
+      alert = "Must click submit first!";
+    }
   });
 };
 function SalarydividedbyBitcoin(rate, maximum) {
