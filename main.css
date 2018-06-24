@@ -197,7 +197,7 @@ h5 {
     width:100;
   }
 }
-/* tablet screen media query */
+/* tablet screen media query & added parallax*/
 @media only screen and (min-width:786px) {
 
 }
