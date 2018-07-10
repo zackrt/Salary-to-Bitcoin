@@ -18,7 +18,6 @@ $(() =>{
             console.log(Amount);
             renderResults(Amount);
         });
-        //convertAmountBTC(); redundant
     })
     $(".start").click(()=>{
         $(".intro").hide();
