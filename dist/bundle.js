@@ -10430,22 +10430,23 @@ var _jquery2 = _interopRequireDefault(_jquery);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var url = "https://jobs.search.gov/jobs/search.json?";
-console.log((0, _jquery2.default)('#jobs-form'));
-
 var jobFormHandler = exports.jobFormHandler = function jobFormHandler() {
   (0, _jquery2.default)('#jobs-form').submit(function (event) {
     event.preventDefault();
     var query = (0, _jquery2.default)('#job-query').val();
     var rate = (0, _jquery2.default)("#one-coin").text();
+
     if (rate) {
       rate = Number(rate);
       _jquery2.default.getJSON(url, {
         query: query
       }).then(function (data) {
-        console.log(data);
-        console.log("Hello");
         (0, _jquery2.default)('.salary-results').html("");
         //get data back form the api, and loop through the items in the response, and get stored in the job var, and appending the html
+        //ADD IF STATEMENT THAT RETURNS NO results
+        if (data.length = -1) {
+          alert("Please search a different job title!");
+        };
         var _iteratorNormalCompletion = true;
         var _didIteratorError = false;
         var _iteratorError = undefined;
@@ -10453,6 +10454,7 @@ var jobFormHandler = exports.jobFormHandler = function jobFormHandler() {
         try {
           for (var _iterator = data.splice(0, 5)[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
             var job = _step.value;
+
 
             console.log('rate', rate, job.maximum);
             (0, _jquery2.default)('.salary-results').append('<p><div class="job-listing-output"><a href="' + job.url + '">\n      <div class="Position-Title">' + job.position_title + '</div></a>\n      <p class="max-salary">\n      <h5>Max. Salary:$' + job.maximum + '\n      </h5>\n      </p> <p class="salary-over-bitcoin">\n      </h5>This Salary Equals:' + SalarydividedbyBitcoin(rate, job.maximum) + '\n      BTC</h5>\n      </p>\n      </p>');
@@ -10480,8 +10482,6 @@ var jobFormHandler = exports.jobFormHandler = function jobFormHandler() {
 function SalarydividedbyBitcoin(rate, maximum) {
   //trying to reduce output of salary/btc to 4 decimal places, parseFloat?
   var roundedBTC = parseInt(maximum);
-  console.log(roundedBTC);
-
   var salaryResults = roundedBTC / rate;
   //to return a float of ten-thousandths .0001?
   return salaryResults.toFixed(4);

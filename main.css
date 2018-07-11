@@ -126,7 +126,8 @@ h5 {
   padding-top: 60px;
   border: white solid;
   background-color: #754d12;
-  padding: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .display-current-rate, .results {

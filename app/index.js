@@ -4,6 +4,7 @@ import { renderResults } from './RenderResults';
 import { jobFormHandler } from './SalaryinBitcoin';
 
 
+
 //On document ready, shows intro & start btn, then takes user input of amount of Bitcoin to US dollars, 
 $(() =>{
     jobFormHandler();
