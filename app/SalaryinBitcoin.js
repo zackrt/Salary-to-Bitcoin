@@ -9,19 +9,22 @@ $('#jobs-form').submit((event) => {
   let rate = $("#one-coin").text();
 
   if (rate) {
-  rate = Number(rate);
-  $.getJSON(url, {
-    query
-  }).then(data => {
-    $('.salary-results').html("");
+    rate = Number(rate);
+    $.getJSON(url, {
+      query
+    }).then(data => {
+      $('.salary-results').html("");
     //get data back form the api, and loop through the items in the response, and get stored in the job var, and appending the html
     //ADD IF STATEMENT THAT RETURNS NO results
-    if (data.length = -1) {
-      alert("Please search a different job title!");
-    };
+    // if (data.length = -1) {
+    //   alert("Please search a different job title!");
+    // };
     for (const job of data.splice(0,5)) {
-
-      console.log('rate', rate, job.maximum);
+      // if (query != data.result) {
+      //   alert("search again!");
+      // } else {
+      // console.log("return");
+      // console.log('rate', rate, job.maximum);
       $('.salary-results').append(`<p><div class="job-listing-output"><a href="${job.url}">
       <div class="Position-Title">${job.position_title}</div></a>
       <p class="max-salary">
@@ -32,8 +35,11 @@ $('#jobs-form').submit((event) => {
       BTC</h5>
       </p>
       </p>`);
+      // }
     }
-  });} else {alert="Must click submit first!"}
+  });
+} 
+  else {alert="Must click submit first!"}
 })
 };
 function SalarydividedbyBitcoin(rate, maximum) {

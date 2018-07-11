@@ -10348,6 +10348,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 //takes Amount from 
 function renderResults(Amount) {
+    var data = void 0;
     (0, _jquery2.default)("#conversion-results").html("" + Amount.toString());
     //return rate of 1 btc in h2 span class "rate-btc"
     (0, _jquery2.default)(".rate-btc").html("" + data.bpi.USD.rate_float);
@@ -10444,9 +10445,9 @@ var jobFormHandler = exports.jobFormHandler = function jobFormHandler() {
         (0, _jquery2.default)('.salary-results').html("");
         //get data back form the api, and loop through the items in the response, and get stored in the job var, and appending the html
         //ADD IF STATEMENT THAT RETURNS NO results
-        if (data.length = -1) {
-          alert("Please search a different job title!");
-        };
+        // if (data.length = -1) {
+        //   alert("Please search a different job title!");
+        // };
         var _iteratorNormalCompletion = true;
         var _didIteratorError = false;
         var _iteratorError = undefined;
@@ -10455,9 +10456,13 @@ var jobFormHandler = exports.jobFormHandler = function jobFormHandler() {
           for (var _iterator = data.splice(0, 5)[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
             var job = _step.value;
 
-
-            console.log('rate', rate, job.maximum);
+            // if (query != data.result) {
+            //   alert("search again!");
+            // } else {
+            // console.log("return");
+            // console.log('rate', rate, job.maximum);
             (0, _jquery2.default)('.salary-results').append('<p><div class="job-listing-output"><a href="' + job.url + '">\n      <div class="Position-Title">' + job.position_title + '</div></a>\n      <p class="max-salary">\n      <h5>Max. Salary:$' + job.maximum + '\n      </h5>\n      </p> <p class="salary-over-bitcoin">\n      </h5>This Salary Equals:' + SalarydividedbyBitcoin(rate, job.maximum) + '\n      BTC</h5>\n      </p>\n      </p>');
+            // }
           }
         } catch (err) {
           _didIteratorError = true;
