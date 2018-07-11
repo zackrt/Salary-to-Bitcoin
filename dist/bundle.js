@@ -10456,12 +10456,11 @@ var jobFormHandler = exports.jobFormHandler = function jobFormHandler() {
           for (var _iterator = data.splice(0, 5)[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
             var job = _step.value;
 
+            console.log("data is:", data);
             // if (query != data.result) {
             //   alert("search again!");
             // } else {
-            // console.log("return");
-            // console.log('rate', rate, job.maximum);
-            (0, _jquery2.default)('.salary-results').append('<p><div class="job-listing-output"><a href="' + job.url + '">\n      <div class="Position-Title">' + job.position_title + '</div></a>\n      <p class="max-salary">\n      <h5>Max. Salary:$' + job.maximum + '\n      </h5>\n      </p> <p class="salary-over-bitcoin">\n      </h5>This Salary Equals:' + SalarydividedbyBitcoin(rate, job.maximum) + '\n      BTC</h5>\n      </p>\n      </p>');
+            (0, _jquery2.default)('.salary-results').append('<p><div class="job-listing-output"><a href="' + job.url + '">\n        <div class="Position-Title">' + job.position_title + '</div></a>\n        <p class="max-salary">\n        <h5>Max. Salary:$' + job.maximum + '\n        </h5>\n        </p> <p class="salary-over-bitcoin">\n        </h5>This Salary Equals:' + SalarydividedbyBitcoin(rate, job.maximum) + '\n        BTC</h5>\n        </p>\n        </p>');
             // }
           }
         } catch (err) {

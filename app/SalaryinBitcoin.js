@@ -19,22 +19,21 @@ $('#jobs-form').submit((event) => {
     // if (data.length = -1) {
     //   alert("Please search a different job title!");
     // };
-    for (const job of data.splice(0,5)) {
+      for (const job of data.splice(0,5)) {
+        console.log("data is:", data);
       // if (query != data.result) {
       //   alert("search again!");
       // } else {
-      // console.log("return");
-      // console.log('rate', rate, job.maximum);
-      $('.salary-results').append(`<p><div class="job-listing-output"><a href="${job.url}">
-      <div class="Position-Title">${job.position_title}</div></a>
-      <p class="max-salary">
-      <h5>Max. Salary:$${job.maximum}
-      </h5>
-      </p> <p class="salary-over-bitcoin">
-      </h5>This Salary Equals:${SalarydividedbyBitcoin(rate,job.maximum)}
-      BTC</h5>
-      </p>
-      </p>`);
+        $('.salary-results').append(`<p><div class="job-listing-output"><a href="${job.url}">
+        <div class="Position-Title">${job.position_title}</div></a>
+        <p class="max-salary">
+        <h5>Max. Salary:$${job.maximum}
+        </h5>
+        </p> <p class="salary-over-bitcoin">
+        </h5>This Salary Equals:${SalarydividedbyBitcoin(rate,job.maximum)}
+        BTC</h5>
+        </p>
+        </p>`);
       // }
     }
   });
