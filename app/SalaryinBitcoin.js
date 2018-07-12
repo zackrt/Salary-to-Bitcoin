@@ -16,14 +16,11 @@ $('#jobs-form').submit((event) => {
       $('.salary-results').html("");
     //get data back form the api, and loop through the items in the response, and get stored in the job var, and appending the html
     //ADD IF STATEMENT THAT RETURNS NO results
-    // if (data.length = -1) {
-    //   alert("Please search a different job title!");
-    // };
+     if (data.length == 0) {
+      alert("Please search a different job title!");
+     } else {
+    console.log("data is:", data);
       for (const job of data.splice(0,5)) {
-        console.log("data is:", data);
-      // if (query != data.result) {
-      //   alert("search again!");
-      // } else {
         $('.salary-results').append(`<p><div class="job-listing-output"><a href="${job.url}">
         <div class="Position-Title">${job.position_title}</div></a>
         <p class="max-salary">
@@ -34,13 +31,12 @@ $('#jobs-form').submit((event) => {
         BTC</h5>
         </p>
         </p>`);
-      // }
+      }
     }
-  });
-} 
-  else {alert="Must click submit first!"}
+  }) 
+}
 })
-};
+}; 
 function SalarydividedbyBitcoin(rate, maximum) {
   //trying to reduce output of salary/btc to 4 decimal places, parseFloat?
   var roundedBTC = parseInt(maximum);

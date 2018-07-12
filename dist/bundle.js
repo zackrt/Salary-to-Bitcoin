@@ -10445,41 +10445,36 @@ var jobFormHandler = exports.jobFormHandler = function jobFormHandler() {
         (0, _jquery2.default)('.salary-results').html("");
         //get data back form the api, and loop through the items in the response, and get stored in the job var, and appending the html
         //ADD IF STATEMENT THAT RETURNS NO results
-        // if (data.length = -1) {
-        //   alert("Please search a different job title!");
-        // };
-        var _iteratorNormalCompletion = true;
-        var _didIteratorError = false;
-        var _iteratorError = undefined;
+        if (data.length == 0) {
+          alert("Please search a different job title!");
+        } else {
+          console.log("data is:", data);
+          var _iteratorNormalCompletion = true;
+          var _didIteratorError = false;
+          var _iteratorError = undefined;
 
-        try {
-          for (var _iterator = data.splice(0, 5)[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-            var job = _step.value;
-
-            console.log("data is:", data);
-            // if (query != data.result) {
-            //   alert("search again!");
-            // } else {
-            (0, _jquery2.default)('.salary-results').append('<p><div class="job-listing-output"><a href="' + job.url + '">\n        <div class="Position-Title">' + job.position_title + '</div></a>\n        <p class="max-salary">\n        <h5>Max. Salary:$' + job.maximum + '\n        </h5>\n        </p> <p class="salary-over-bitcoin">\n        </h5>This Salary Equals:' + SalarydividedbyBitcoin(rate, job.maximum) + '\n        BTC</h5>\n        </p>\n        </p>');
-            // }
-          }
-        } catch (err) {
-          _didIteratorError = true;
-          _iteratorError = err;
-        } finally {
           try {
-            if (!_iteratorNormalCompletion && _iterator.return) {
-              _iterator.return();
+            for (var _iterator = data.splice(0, 5)[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+              var job = _step.value;
+
+              (0, _jquery2.default)('.salary-results').append('<p><div class="job-listing-output"><a href="' + job.url + '">\n        <div class="Position-Title">' + job.position_title + '</div></a>\n        <p class="max-salary">\n        <h5>Max. Salary:$' + job.maximum + '\n        </h5>\n        </p> <p class="salary-over-bitcoin">\n        </h5>This Salary Equals:' + SalarydividedbyBitcoin(rate, job.maximum) + '\n        BTC</h5>\n        </p>\n        </p>');
             }
+          } catch (err) {
+            _didIteratorError = true;
+            _iteratorError = err;
           } finally {
-            if (_didIteratorError) {
-              throw _iteratorError;
+            try {
+              if (!_iteratorNormalCompletion && _iterator.return) {
+                _iterator.return();
+              }
+            } finally {
+              if (_didIteratorError) {
+                throw _iteratorError;
+              }
             }
           }
         }
       });
-    } else {
-      alert = "Must click submit first!";
     }
   });
 };
