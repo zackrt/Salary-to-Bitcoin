@@ -1,7 +1,7 @@
 import $ from 'jquery';
 
 const url =
-"https://jobs.search.gov/jobs/search.json?";
+"https://data.usajobs.gov/api/search";
 export const jobFormHandler = ()=> {
 $('#jobs-form').submit((event) => {
   event.preventDefault();
